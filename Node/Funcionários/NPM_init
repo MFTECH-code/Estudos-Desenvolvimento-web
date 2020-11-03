@@ -1,0 +1,7 @@
+O comando npm init cria um package.json com todas as informações da nossa aplicação, precisamos desse json para 
+informar quais dependencias estamos usando.
+
+Para que a dependencia apareça no JSON usamos --save na hora de instalar ela: npm i --save dependencia 
+
+Note que foi criado também o arquvio package-lock.json, esse arquivo é muito importante pois ele mostra a versão
+da dependencia que nós usamos no desenvolvimento do nosso app.

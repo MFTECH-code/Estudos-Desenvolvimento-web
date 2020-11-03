@@ -1,0 +1,7 @@
+No package.json, podemos criar scripts de uma forma fácil, 
+no exemplo criamo um script para executar usando nodemon
+"start": "nodemon"-> o comando start por ser padrão, não precisamos executar com run, apenas npm start 
+"dev": "nodemon" -> esse comando não é padrão para rodar ele precisamos digitar npm run dev 
+
+Quando temos um package.json mas não temos a pasta node_modules basta rodar npm init e ele criara uma pasta node modules
+com todas as dependencias pedidas
