@@ -1,5 +1,7 @@
 // Promise -> uma promessa, que pode ou não pode acontecer
 
+// Promises são funções retornadas "Futuramente", de forma assíncrona podendo ser aceitas(resolve) ou rejeitadas (reject)
+
 function falarDepoisDe(tempo, frase) {
     return new Promise((resolve, reject) => {
         // O parâmetro resolve, é uma função que será chamada quando a promessa for atendida
