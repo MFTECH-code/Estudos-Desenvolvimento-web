@@ -1,0 +1,9 @@
+let valor; // Variável que não foi inicializada
+console.log(valor); // Por não ter sido inicializada ela recebe undefined...
+
+
+// null -> não tem nenhum valor...
+valor = null; // Variável foi inicializada
+console.log(valor); 
+
+// Sempre use null quando quiser zerar uma variável...

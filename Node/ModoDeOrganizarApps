@@ -1,0 +1,9 @@
+Na criação de apps usamos um padrão de organização em camadas, onde cada camada possui sua responsabilidade
+
+A forma como organizamos uma aplicação front-end é diferente da forma como organizamos uma back-end
+
+Como o código do front-end deve ir para o browser ele deve ser leve, por isso dever ser compactado
+Já o código do back-end não precisa ser compactado pos ele estará rodando no servidor, o que pode ser mandado para web são dados no formato JSON
+Assim funcionam as APIs, elas retornam sempre um JSON
+
+Em node, se organiza uma aplicação back-end em pastas e arquivos, onde o arquivo é um módulo.
