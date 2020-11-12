@@ -1,0 +1,36 @@
+/*
+    Dentro da tag style usaremos código CSS
+    CSS -> Cascading Style Sheet
+    (Código de cascata)
+
+    Anatomia do CSS: 
+
+    elemento {
+        atributo: valor;
+    }
+
+    Os atributos e os valores já são pré definidos, portanto é importante ler a documentação para saber como funciona
+    cada atributo e seus valores.
+*/
+h1 {
+    font-size: 20px;
+}
+
+/* Selecionando uma class no CSS */
+.fundoVermelho {
+    background-color: #ff0000; /* Podemos usar formato RGB para selecionar as cores */
+}
+
+.negrito {
+    font-weight: bold;
+}
+        
+/* Selecionando um id no CSS */
+#texto1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #ffff;
+    background-color: #444;
+
+    padding: 4px; 
+}
