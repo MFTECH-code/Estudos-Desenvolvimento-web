@@ -1,0 +1,112 @@
+<!-- Imagens -->
+
+<!-- Desafio slider -->
+<div wm-slider>
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" alt="Pedras na praia" width="342" height="342" title="Pedras na praia">
+        <!-- src -> caminho da imagem -->
+        <!-- alt -> caso a image não carregue, irá exibir o conteúdo de alt, também usado para deficiente visuais -->
+        <!-- width e height -> tamanho da imagem -->
+        <!-- title -> título da imagem -->
+    </p>
+    <p>
+        <!-- Carregando um gif -->
+        <img src="http://files.cod3r.com.br/curso-web/imagem2.gif" alt="gif animado" height="342">
+    </p>
+    <p class="circular">
+        <img src="http://files.cod3r.com.br/curso-web/imagem3.png" alt="Rio de janeiro" height="342">
+        <!-- Imagens png possuem o fundo transparente -->
+    </p>
+    <p class="text">
+        <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" alt="Avatar" height="50" align="left"> 
+        Texto ercoiedhjcquihncjqnjdciqsdcuqndjcnqdncqidncqojkdncqiwdjncqjindcqiwjudncqwdncqwdcnqdcnqdiw
+        cqdcqwdcjqwiodjcqowidjcqwoidcjqoiwdjcoqwidjcqoiwdjcqoidjcoqiwdjcoqijdcoqwidjcoiqjdcoiqjdcoqjidciqo
+        cqdoiwscjqoidcjqwodjcqwoidjcqwoidjcqowidjcqowdicjqwoidcjqwodicjqwdocijqwiodcjqwoidjcoqidjcoqwidjcqwoidjcqwio
+        <!-- Temos a propriedade align mas não muito usada -->
+    </p>
+    <!-- Aplicando imagem apartir do CSS -->
+    <p class="cidade"></p>
+    <p>
+        <picture>
+            <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png" media="(min-width: 600px)">
+            <!-- media -> determinando se a imagem irá aparecer na página -->
+            <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="Logo">    
+        </picture>
+    </p>
+</div>
+
+
+<style>
+    p {
+        position: absolute;
+        display: none;
+    }
+
+    .circular {
+        width: 513px;
+        background-color: #444;
+    }
+
+    .text {
+        width: 400px;
+    }
+
+    .text img {
+        margin-right: 10px;
+    }
+
+    .cidade {
+        width: 513px;
+        height: 342px;
+        background-image: url('http://files.cod3r.com.br/curso-web/imagem4.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 200%;
+    }
+</style>
+
+<script>
+    function mover(element, start, end, step, callback) {
+        const newStart = start - step
+        if (newStart >= end) {
+            element.style.left = newStart + 'px'
+            setTimeout(() => mover(element, start, end, step, callback), 7)
+        } else {
+            callback()
+        }
+    }
+    /*
+    const p = document.querySelector('[wm-slider] > p') // Pegando a primeira tag p que está dentro da div [wm-slider]
+    p.style.display = 'block' // Fazendo a imagem aparecer
+    mover(p, 1500, -520, 5, () => {
+        console.log('Fim')
+    })
+    */
+
+    function slider() {
+        const elements = document.querySelectorAll('[wm-slider] > p') // Pegando todas as tags p
+        const slides = Array.from(elements)
+        exibirSlide(slides, slides[0])
+    }
+
+    function exibirSlide(list, first) {
+        first.style.display = 'block'
+
+        const inicio = innerWidth // Pegando largura da página
+        const fim = -first.clientWidth
+
+        first.style.left = `${inicio}px`
+
+        mover(first, inicio, fim, 5, () => {
+            first.style.display = 'none'
+            exibirSlide(list, getProximo(list, first))
+        })
+    }
+
+    function getProximo(list, atual) {
+        const i = list.indexOf(atual) + 1
+        return i < list.length ? list[i] : list[0]
+    }
+
+    slider()
+</script>

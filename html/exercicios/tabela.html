@@ -1,0 +1,63 @@
+<!-- Tabela -->
+
+<!-- A tabela possui um cabeçalho, corpo e rodapé assim como uma página html -->
+<table> <!-- Tag que define a tabela -->
+    <caption>Produtos</caption> <!-- Tag opcional, colocamos nela o que representa nossa tabela -->
+    <thead>
+        <!-- Cabeçalho da tabela -->
+        <tr> <!-- Criamos uma linha tablhe row -->
+            <th>Produto</th> <!-- th -> o nome de cada coluna -->
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- No tbody colocaremos os dados da tabela -->
+        <tr> <!-- Primeira linha da tabela -->
+            <td>Ipad</td> <!-- td -> table data é o dado -->
+            <td>R$3969,00</td>
+            <td>1</td>
+            <td>R$3969,00</td>
+        </tr>
+        <tr>
+            <td>Samsung S9</td>
+            <td>R$2649,00</td>
+            <td>2</td>
+            <td>R$5298,00</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <!-- Rodapé da tabela -->
+        <tr> <!-- Criamos uma linha -->
+            <td colspan="3">Total</td> <!-- Usamos o colspan para ocupar mais de uma coluna -->
+            <td>R$9267,00</td>
+            <!-- rowspan -> ocupa mais de uma linha -->
+        </tr>
+    </tfoot>
+</table>
+
+<style>
+    table {
+        border-collapse: collapse; /* Tirando a borda da tabela */
+    }
+
+    th, td {
+        padding: 10px;
+
+    }
+
+    thead tr {
+        border-bottom: solid 3px #444;
+    }
+
+    tbody tr:hover {
+        background-color: #dedede;
+    }
+
+    tfoot {
+        background-color: #444;
+        color: #fff;
+        font-weight: bold;
+    }
+</style>

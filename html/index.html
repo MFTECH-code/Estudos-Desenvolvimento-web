@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercícios HTML</title>
+    <style>
+        #content {
+            padding: 30px 0px; /* Cima e baixo, direita e esquerda */
+        }
+
+        a {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Exercícios HTML</h1>
+    </header>
+    <nav>
+        <!-- Vamos criar um link para cada exercicio que formos fazer -->
+        <a href="exercicios/teste.html">00 - teste</a>
+        <a href="exercicios/texto1.html">01 - textos.1</a>
+        <a href="exercicios/texto2.html">02 - textos.2</a>
+        <a href="exercicios/listas.html"> 03 - listas</a>
+        <a href="exercicios/listaAninhada.html">04 - lista.aninhada</a>
+        <a href="exercicios/links1.html">05 - links.1</a>
+        <a href="exercicios/tabela.html">06 - tabela</a>
+        <a href="exercicios/Form/form.html">07 - formulário</a>
+        <a href="exercicios/imagens.html">08 - imagens</a>
+        <a href="exercicios/video.html">09 - videos</a>
+        <a href="exercicios/tagsNaoVisuais.html">10 - tags não visuais</a>
+    </nav>
+
+    <section id="content">
+        <!-- Todos os nossos exercicios vão ficar dentro na nossa section -->
+    </section>
+    <footer>
+        <p>Curso de web moderno</p>
+    </footer>
+    <script>
+        // Vamos renderizar o conteúdo de cada exercício na nossa página
+        // Interceptar o click do link
+        document.querySelectorAll("a").forEach(link => { // Associamos uma função quando o usuário clickar no link
+            // Localizando a section content
+            const content = document.querySelector("#content")
+            // Selecionamos todos os links e separamos eles
+            link.onclick = function(e) {
+                // Evitando o comportamento padrão que a tag link tem, que é navegação
+                e.preventDefault()
+                
+                // Requisição AJAX
+                // fetch -> recurso novo do JS, programação assíncrona, podemos realizar requisições AJAX com ele
+                fetch(link.href) // Damos um fetch na url de cada link
+                    .then(res => res.text()) // Pegando o conteúdo HTML da página que fizemos a requisição
+                    .then(html => content.innerHTML = html) // Jogando conteúdo HTML na nossa seção de conteúdo
+                
+            }
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!-- Videos -->
+
+<video id="meuVideo" width="800" height="450" controls autoplay controlsList="nodownload"> <!-- Tag video -->
+    <!-- A propriedade controls adiciona os controles do player -->
+    <!-- A propriedade autoplay faz com que o video inicie assim que entrarmos na tela dele -->
+    <!-- A propriedade controlsList permite que não tenha algumas coisas nos controles do nosso player -->
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4"> <!-- Tag source -->
+    Seu browser não suporta a tag video.
+</video>
+
+<div wm-progresso="meuVideo" class="progresso">
+    <div></div>
+</div>
+
+<div>
+    <button wm-play="meuVideo">Play</button>
+    <button wm-pause="meuVideo">Pause</button>
+</div>
+
+<style>
+    .progresso {
+        height: 20px;
+        width: 500px;
+        border: solid 1px #444;
+        margin: 20px;
+    }
+
+    .progresso div {
+        background-color: red;
+        color: white;
+        height: 100%;
+        width: 0%; /* Barra de progresso, comforme o video for passando ela aumenta */
+        text-align: right;
+        font-size: 14px;
+    }
+</style>
+
+<script>
+    // Fazer os botões pausarem o video
+    // Pégando video
+    const video = document.querySelector('#meuVideo')
+    // Pégando botões
+    const buttonPlay = document.querySelector('[wm-play]')
+    const buttonPause = document.querySelector('[wm-pause]')
+
+    buttonPlay.onclick = () => video.play()
+    buttonPause.onclick = () => video.pause()
+
+    // Fazendo a barra de progresso se mecher
+    const progressBar = document.querySelector('.progresso > div')
+    setInterval(() => {
+    const tempoAtual = (video.currentTime * 100) / video.duration
+    progressBar.style.width = `${tempoAtual}%`
+    progressBar.innerHTML = `${tempoAtual.toFixed(1)}%`
+    }, 100);
+
+    // Evitando que nosso video seja baixado por outras pessoas
+    video.oncontextmenu = () => false // Não mostra o menu de contexto
+    
+    
+</script>

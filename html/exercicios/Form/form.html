@@ -1,0 +1,52 @@
+<!-- Formulário -->
+
+<form method="POST">
+    <!-- action -> irá fazer uma requisição -->
+    <!-- method -> método http, POST -->
+    <input type="hidden" name="id" value="3"> <!-- input não visivel para o usuário -->
+    <input type="text" name="nome"> <!-- text -> input que levará um texto -->
+    <input type="password" name="senha"> <!-- password -> input que deve receber uma senha -->
+    <textarea name="bio" cols="30" rows="10"></textarea> <!-- textarea -> é um campo de texto -->
+    <div>
+        <!-- radio -> caixa de marcação -->
+        <input type="radio" name="tipo" value="admin"> Admin
+        <input type="radio" name="tipo" value="regular"> Regular
+        <input type="radio" name="tipo" value="professor"> Professor
+    </div>
+    <div>
+        <!-- checkbox -> caixa de marcação -->
+        <input type="checkbox" name="ativo"> Ativo
+    </div>
+    <!-- select -> campo que você seleciona uma opção -->
+    <select name="estado">
+        <option value="">Selecione</option>
+        <option value="ac">Acre</option>
+        <option value="ba">Bahia</option>
+        <option value="ce">Ceará</option>
+    </select>
+    <!-- Seleção de multiplos valores -->
+    <select name="interesses" multiple size="6">
+        <option value="js">JavaScript</option>
+        <option value="java">Java</option>
+        <option value="php">PHP</option>
+        <option value="python">Python</option>
+        <option value="go">Golang</option>
+        <option value="c">C</option>
+    </select>
+
+    <button formaction="http://localhost:3003/usuarios">Incluir</button>
+    <button formaction="http://localhost:3003/usuarios">Alterar</button>
+</form>
+
+<style>
+    input,
+    textarea,
+    select {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input[type=radio], input[type=checkbox] {
+        display: inline;
+    }
+</style>

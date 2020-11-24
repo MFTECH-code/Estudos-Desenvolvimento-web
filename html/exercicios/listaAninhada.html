@@ -1,0 +1,91 @@
+<!-- Listas aninhadas -->
+
+<h1>Projeto</h1>
+<ul class="tree">
+    <li>
+        <button onclick="hiddenBack()">Backend</button>
+        <ul id="display-back">
+            <li>
+                <button onclick="hiddenApp()">app</button>
+                <ul id="display-app">
+                    <li>produto.js</li>
+                    <li>usuario.js</li>
+                    <li>venda.js</li>
+                </ul>
+            </li>
+            <li>
+                <button onclick="hiddenConfig()">config</button>
+                <ul id="display-config">
+                    <li>banco.js</li>
+                    <li>rotas.js</li>
+                    <li>server.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <button onclick="hiddenFront()">frontend</button>
+        <ul id="display-front">
+            <li>
+                <button onclick="hiddenPublic()">public</button>
+                <ul id="display-public">
+                    <li>app.css</li>
+                    <li>app.js</li>
+                    <li>index.html</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+<script>
+    const displayBack = document.querySelector('#display-back')
+    const displayFront = document.querySelector('#display-front')
+
+    const displayApp = document.querySelector('#display-app')
+    const displayConfig = document.querySelector('#display-config')
+
+    const displayPublic = document.querySelector('#display-public')
+
+    function hiddenBack() {
+        if (displayBack.hidden == false) {
+            displayBack.hidden = true
+        } else {
+            displayBack.hidden = false
+        }
+    }
+
+    function hiddenApp() {
+        if (displayApp.hidden == false) {
+            displayApp.hidden = true
+        } else {
+            displayApp.hidden = false
+        }
+    }
+
+    function hiddenConfig() {
+        if (displayConfig.hidden == false) {
+            displayConfig.hidden = true
+        } else {
+            displayConfig.hidden = false
+        }
+    }
+
+    function hiddenFront() {
+        if (displayFront.hidden == false) {
+            displayFront.hidden = true
+        } else {
+            displayFront.hidden = false
+        }
+    }
+
+    function hiddenPublic() {
+        if (displayPublic.hidden == false) {
+            displayPublic.hidden = true
+        } else {
+            displayPublic.hidden = false
+        }
+    }
+
+</script>
