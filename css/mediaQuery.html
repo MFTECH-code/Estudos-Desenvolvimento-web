@@ -12,6 +12,31 @@
             border: solid 5px;
             display: none;
         }
+
+        @media (max-width: 600px) {
+            /* Todo código CSS aqui só será aplicado quando a largura máxima for 600px */
+            .muito-pequeno {
+                display: block;
+            }
+        }
+
+        @media (max-width: 1000px), (orientation: portrait) {
+            /* Largura máxima de 1000px ou quando a tela estiver em modo retrato */
+            .pequeno-retrato {
+                display: block;
+            }
+        }
+
+        @media (min-width: 500px) and (max-width: 1000px) {
+            /* Tem que ter uma largura minima de 500px e máxima de 1000px */ 
+            .intervalo {
+                display: block;
+            }
+        }
+
+        /*
+            Media query são como condicionais dentro do CSS
+        */
     </style>
 </head>
 <body>

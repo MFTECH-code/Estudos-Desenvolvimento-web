@@ -5,12 +5,20 @@
     <meta charset="UTF-8">
     <title>Origem CSS: Externo, Interno e Inline</title>
     <style>
-        /* ... */
+        body {
+            background-color: aquamarine;
+        }
     </style>
+    <link rel="stylesheet" href="css/externo.css">
+    <!-- Por causa de relação stylesheet, a folha de estilo é aplicada -->
+    <!-- O último sempre terá a preferencia, pois CSS é cascading code, o que ta em baixo tem mais importancia -->
 </head>
-
-<body>
+<!-- CSS inline -->
+<!-- Não é muito recomendavel usar o CSS inline, pois o código pode ficar muito desorganizado -->
+<body style="background-color:coral;">
+    <!-- Note que o CSS inline possui um peso muito maior que os outros -->
     <h1>E agora?</h1>
 </body>
 
 </html>
+<!-- A forma mais recomendada é usar CSS externo, mas durante o curso usaremos a tag style por maior praticidade -->

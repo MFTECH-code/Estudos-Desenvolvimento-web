@@ -6,11 +6,55 @@
     <title>Cores</title>
     <style>
         /* 
-            https://www.w3schools.com/colors/colors_hsl.asp
+            https://www.w3schools.com/colors/colors_hsl.asp -> Explicando o HSL
             
-            https://coolors.co/
-            http://paletton.com/
+            https://coolors.co/ -> Site de paleta de cores
+            http://paletton.com/ -. Site de paleta de cores
         */
+        /*
+            HSL -> 
+            H: cor no expectro de cores de 1 á 360
+            S: saturação de 0 a 100%
+            L: nível de luz 0 a 100%
+
+            HSLA -> adiciona transparencia
+        */
+
+        /*
+            Hexadecimal
+            # f6    78      09 -> 1 até f nas 3 casas
+              red   green   blue    
+
+            00 -> desativa a cor
+            contando em hexadecimal: 1, 2, 3, 4, 5, 6, 7, 8, 9, a, b, c, d, e, f.
+            Você vai misturando as cores
+
+            Cores com transparencia
+            # ed    c9  12  80
+                            Trasnparência vai de 00 até ff
+                            00 -> 100% transparente
+                            ff -> 0% transparente
+        */                  
+
+        /*
+            função rgb(red, green, blue)
+            as cores vão de 0 á 255
+
+            função rgba(red, green, blue, transp)
+        */
+
+        body {
+            background-color: green; /* Colocando o nome da cor */
+            background-color: #f67809; /* Colocando cores hexadecimais */
+            background-color: #ff00ff;
+            background-color: #abc; /* Podemos simplificar: abc == aabbcc */
+            background-color: #edc91280; /* Aplicando uma transparencia na cor */
+            background-color: rgb(55, 110, 220); /* Colocando cores RGB */
+            background-color: rgba(55, 110, 220, .5);
+            /* hue, saturation e lightness */
+            background-color: hsl(215, 80%, 70%);
+            
+        }
     </style>
 </head>
 

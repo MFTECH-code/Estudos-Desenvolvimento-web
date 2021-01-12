@@ -5,7 +5,46 @@
     <meta charset="UTF-8">
     <title>Anatomia CSS</title>
     <style>
-        /* ... */
+        /* 
+        Anatomia CSS
+        
+        seletor {
+            propriedade: valor;
+        }
+        O seletor pode ser uma tag, classe ou id
+        */
+        .selector {
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+            /* Podemos ter propriedades com vários valores */
+            border: solid 5px navy; /* shorthand property -> propriedades que possuem acesso mais rápido */
+            /* Alternancias */
+            font-family: Helvetica, sans-serif; /* Caso a fonte helvetica não funcione, será selecionada a sans-serif */
+            /* Funções */
+            width: calc(100% - 100px);
+            background-color: rgb(34, 153, 189);
+            transition: 1s;
+        }
+
+        /* Usando uma pseudo-classe */
+        .selector:hover {
+            /* pseudo-classe hover -> quando o mouse do usuário estiver em cima do componente */
+            background-color: orangered;
+            /* Transição para suavizar animações */
+            transition: 1s;
+        }
+
+        /* Usando pseudo-elementos */
+        .selector::first-letter {
+            /* pseudo-elemento first-letter altera somente a primeira letra de um elemento */
+            font-size: 60px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+        }
+
+        /* Padrão de nomenclatura -> Fica ao seu gosto, mas seja consistente */
+        /* dash-case ou camelCase */
     </style>
 </head>
 

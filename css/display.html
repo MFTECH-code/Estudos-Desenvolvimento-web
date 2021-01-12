@@ -5,7 +5,45 @@
     <meta charset="UTF-8">
     <title>Display</title>
     <style>
-        /* ... */
+        /* 
+            Display block -> Cada elemento terá sua própria linha
+            Display inline -> Organiza os elementos na mesma linha
+            Display inline-block -> Organiza na mesma linha, só que considera largura e altura
+
+        */
+
+        body {
+            font-size: 40px;
+            color: #fff;
+            background-color: coral;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        div {
+            background-color: seagreen;
+        }
+
+        span {
+            background-color: dodgerblue;
+        }
+
+        li {
+            background-color: purple;
+        }
+
+        div, span, li {
+            width: 50%; /* 50% em relação ao tamanho da tela */
+            width: 200px; /* pixels como são valores absolutos, não são bons para fazer páginas responsivas */  
+            height: 80px;
+            padding-top: 30px;
+            text-align: center;
+            display: block;
+            display: inline;
+            display: inline-block;
+        }
     </style>
 </head>
 

@@ -5,7 +5,20 @@
     <meta charset="UTF-8">
     <title>Herança</title>
     <style>
-        /* ... */
+        /* Em css alguns atributos podem ser passados por herança */
+        body {
+            font-family: monospace;
+            font-size: 40px;
+            border: solid 3px red;
+            padding: 50px;
+        }
+
+        div {
+            border: inherit; /* Herdando um atributo de forma esplicita */
+            padding: inherit;
+        }
+
+        /* Note que a fonte foi transmitida, mas a borda não foi, isso porque a borda não é transmitida por herança */
     </style>
 </head>
 

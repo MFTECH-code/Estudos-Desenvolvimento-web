@@ -4,7 +4,25 @@
     <meta charset="UTF-8">
     <title>Unidades #02</title>
     <style>
-        /* ... */
+        .fora {
+            position: relative;
+            background-color: orange;
+            /* por padrão a div possui uma largura 100% e uma altura 0% */
+            width: 400px;
+            height: 400px;
+            padding: 50px;
+
+        }
+
+        .dentro {
+            background-color: mediumvioletred;
+            height: 100px;
+            width: 100%;
+            position: static; /* Conteudo */
+            position: relative; /* Conteudo */
+            position: absolute; /* Conteudo + padding */
+            position: fixed; /* Viewport */
+        }
     </style>
 </head>
 <body>

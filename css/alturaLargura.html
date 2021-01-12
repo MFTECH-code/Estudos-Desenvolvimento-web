@@ -5,10 +5,16 @@
     <meta charset="UTF-8">
     <title>Altura e Largura</title>
     <style>
+        html {
+            height: 100%;
+        }
+
         body {
             font-size: 40px;
             background-color: coral;
-        }
+            height: 100%;   
+            margin: 0;     
+            }
 
         div {
             background-color: seagreen;
@@ -17,12 +23,28 @@
         span {
             background-color: dodgerblue;
         }
+
+        span, div {
+            width: 50%; /* Somente irá valer na div pois ela é display block */
+            height: 250px; /* Somente irá valer na div */
+            height: 50%; /* Nesse caso a altura não foi considerada */
+            display: inline-block;
+            /*
+                No caso da altura com porcentagem, não aconteceu nada porque o body só tinha 96 pixels
+                Já com usando pixels que um valor fixo, fez com que o tamanho do body aumentasse
+                Então o body ele aumenta de tamanho comforme você coloca elementos ou coloca medidas absolutas como pixel
+
+                Mas podemos resolver esse problema colocando 100% na altura do html e do body, porque agora eles ocupam
+                100% da altura, ent não tem como o body ficar com 96 pixels
+            */
+        }
     </style>
 </head>
 
 <body>
-    <div>Título</div>
-    <span>Subtítulo</span>
+    <div>Título</div><!--
+        Sempre que usar inline-block, cheque se existem caractéres em branco
+    --><span>Subtítulo</span>
 </body>
 
 </html>

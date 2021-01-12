@@ -16,6 +16,62 @@
             flex-direction: column;
             align-items: center;
         }
+
+        p {
+            /* Valores padrão */
+            font-size: 1em;
+            font-size: 100%;
+            font-size: 16px;
+            font-size: 12pt;
+
+            /* Unidades absolutas */
+            font-size: 100px; /* O tamanho do pixel é relativo, depende da densidade da sua tela */
+            font-size: 72pt; /* pontos */
+            font-size: 1in; /* polegada */
+
+            /* Unidades relativas */
+            font-size: 2.2em;
+            font-size: 2.2rem; /* Pega como referencia o HTML da raíz */    
+            font-size: 50vh;
+            font-size: 10vw;
+
+            /* Familias de fonte */
+            font-family: monospace;
+            font-family: Georgia, serif;
+            font-family: Verdana, sans-serif;
+
+            font-weight: 100; /* peso da fonte */
+            font-style: italic; /* Estilo da fonte */
+            text-transform: uppercase;  
+            /*text-decoration: overline underline line-through;*/
+            word-spacing: 10px; /* Espaçamento entre palavras */
+            letter-spacing: 20px; /* Espaçamento entre as letras */
+            line-height: 2em; /* Espaçamento entre linhas */
+            text-align: center; /* Centralizando o texto1 */
+        }
+
+        .botao {
+            font-size: 28px;
+            text-decoration: none;
+            padding: 10px 30px;
+            border-radius: 25px;
+        }
+
+        .destaque {
+            color: #fff;
+            background-color: tomato;
+            box-shadow: 2px 2px 1px 1px #0004;
+        }
+
+        .destaque:active {
+            /* Quando o botão for clickado */
+            box-shadow: none;
+            margin-top: 2px;
+        }
+
+        .destaque:hover {
+            opacity: .8;
+        }
     </style>
 </head>
 

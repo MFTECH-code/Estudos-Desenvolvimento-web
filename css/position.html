@@ -5,7 +5,75 @@
     <meta charset="UTF-8">
     <title>Position</title>
     <style>
-        /* ... */
+        /*  */
+
+        div {
+            font-size: 60px;
+            padding: 30px;
+            border: solid 5px #222;
+            color: #fff;
+        }
+
+        .static {
+            top: 100px;
+            left: 100px;
+            /* O position static não leva em consideração top e left */
+            background-color: steelblue;
+        }
+
+        .fixed {
+            position: fixed;
+            bottom: 30px;
+            right: 0px;
+            background-color: tomato;
+            /* Note que por ser position fixed, ele realmente fica fixo acompanhando o scroll */
+            /* Podemos usar em banners de promoção, ou caixa de textos */
+        }
+
+        .relative1 {
+            position: relative;
+            left: 50px;
+            top: 5px;
+            background-color: seagreen;
+            /* Note que ele vai se referir ao elemento estático anterior */
+        }
+
+        .absolute1 {
+            position: absolute;
+            left: 350px;
+            top: 120px;
+            background-color: violet;
+            /* Note que ele se posiciona em cima dos outros elementos, isso porque ele se posiciona em relação a viewport */
+        }
+
+        .relative2 {
+            position: relative;
+            left: 250px;
+            top: 2000px;
+            width: 200px;
+            height: 200px;
+            background-color: slategray;
+        }
+
+        .absolute2 {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: orange;
+            /* Por estar dentro de uma div com position relative, ele se posiciona em relação a div */
+            /* APENA USE ABSOLUTE DENTRO DE UMA DIV SE A POSITION DA DIV FOR RELATIVA */
+        }
+
+        .sticky {
+            position: -webkit-sticky; /* Safari */
+            position: sticky;
+            background-color: #777;
+            top: 0px;
+            /* O sticky não sai da tela comforme vc for baixando o scroll */
+            /* Interessante para usar em menu de páginas pra sempre se manter na parte superior do site */
+        }
     </style>
 </head>
 

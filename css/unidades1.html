@@ -5,7 +5,46 @@
     <meta charset="UTF-8">
     <title>Unidades #01</title>
     <style>
-        /* ... */
+        /* 
+            Unidades absolutas
+            px -> mais usada
+            cm
+            mm
+
+            Unidades relativas
+            vh -> view height (altura da tela)
+            vw -> view width (largura da tela)
+            (vmin e vmax são muito usados para mobile)
+            vmin -> Pega o eixo que estiver menor
+            vmax -> Pega o eixo que estiver maior
+            rem -> Unidade relativa á raíz
+            em -> Unidade relativa ao elemento pai
+        */
+
+        .unidades-absolutas {
+            position: absolute; /* Posiciona a div de maneira absoluta na tela */
+            font-size: 40px;
+            padding: 20px;
+            border: solid 5px #222;
+            margin: 30px;
+            width: 4cm; /* pouco usado */
+            height: 20mm; /* pouco usado */
+            /* top e left são considerados por causa do position absolute */
+            top: 150px; /* Distancia do topo da página até a div */
+            left: 200px; /* Distancia da esquerda até a div */
+        }
+
+        .unidades-relativas {
+            position: absolute;
+            font-size: 4em; /* O tamanho da fornte será 4x maior */
+            padding: 5%; 
+            border: solid 1vw #222; /* 1vw -> 1/100 to tamanho da largura da tela */
+            margin: .8%;
+            width: 20vw;
+            height: 15vh; /* 1vh _. 1/100 do tamanho da altura da tela */
+            bottom: 5%;
+            right: 5%;
+        }
     </style>
 </head>
 

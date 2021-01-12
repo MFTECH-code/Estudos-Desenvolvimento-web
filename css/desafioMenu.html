@@ -7,7 +7,134 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
-        /* ... */
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: lightgray;
+            margin: 0;
+            height: 2000px;
+            font-family: "Oswald", sans-serif;
+        }
+
+        header {
+            background-color: #4F4F4F;
+            width: 100%;
+            display: inline-block;
+            align-items: center;
+            padding: 10px;
+            border-bottom: solid 5px skyblue;
+            color: white;
+            padding-top: 0;
+            position: fixed;
+        }
+
+        .cabecalho {
+            width: 100%;
+            box-sizing: content-box;
+        }
+
+        .logo {
+            display: inline-block;
+        }
+
+        img {
+            padding-top: 10px;
+            max-width: 200px;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .menu {
+            width: 100px;
+        }
+
+        nav {
+            display: inline;
+        }
+
+        ul {
+            display: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        @media (max-width: 634px) {
+            .menu-toggle {
+                display: inline;
+                align-items: center;
+                position: relative;
+                margin-top: 20px;
+                margin-right: 20px;
+                float: right;
+                color: white;
+                background-color: #707070;
+                border: solid 1px #686868;
+                border-radius: 5px;
+                height: 40px;
+
+            }
+        }
+
+        @media (min-width: 635px) {
+            ul {
+            display: inline;
+            margin-bottom: 10px;
+            }
+        }
+         
+        li {
+            display: inline;
+            margin-left: 10px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            padding: 15px;
+            border-radius: 2px;
+            padding-bottom: 5px;
+            padding-top: 5px;
+        }
+
+        .menu a:hover,
+        .menu a.selected {
+            background-color: skyblue;
+            color: #4F4F4F;
+        }
+
+        aside {
+            display: none;
+        }
+
+        @media (min-width: 1366px) and (max-width: 1366px) {
+            aside {
+                display: inline;
+                margin-left: 620px;
+            }
+
+            aside a {
+                text-decoration: none;
+                color: white;
+                margin-left: 2px;
+                padding: 10px;
+                padding-bottom: 5px;
+                padding-top: 5px;
+            }
+
+            aside .destaque {
+                background-color: #B22222;
+                border-radius: 200px;
+            }
+
+            aside .destaque:active {
+                opacity: .8;
+            }
+        }
     </style>
 </head>
 
@@ -44,7 +171,24 @@
     </header>
 
     <script>
-        // ...
+        // Pesquisar evento que ve a mudança do #
+        // window.location.hash -> retorna qual hash está
+        
+        window.onhashchange = function(e) {
+            const oldUrl = e.oldURL.split("#")[1] // Pegando apenas o palavra sem #
+            const newUrl = e.newURL.split("#")[1]
+
+            console.log(oldUrl, newUrl)
+
+            const oldMenu = document.querySelector(`.menu [href='#${oldUrl}']`) // Pegando o link com o hash
+            const newMenu = document.querySelector(`.menu [href='#${newUrl}']`)
+
+            oldMenu && oldMenu.classList.remove('selected') // Tirando a classe selected de um hash antigo
+            newMenu && newMenu.classList.add('selected') // Adicionando a classe selected
+        }
+        
+
+
     </script>
 </body>
 

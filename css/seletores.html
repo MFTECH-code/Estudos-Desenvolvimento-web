@@ -6,7 +6,29 @@
     <title>CSS Selectors</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        /*
+            Seletores
+            * -> seletor global
+            .class -> classe
+            #id -> ID
+            [prop] -> propriedade
+            [prop=valor] -> Podemos pegar uma propriedade com um valor especifico
+            body, p, h1 -> Vai dar as mesmas propriedades para as tags mencionadas
+
+            #aninhado > div -> Pega o filho direto
+            #aninhado section -> Vai pegar o elemento dentro de aninhado
+            p + ul -> vai pegar uma ul que tenha antes dela uma tag p
+            p ~ ol -> Vai pegar a tag ol que é irmã da tag p
+
+            span:nth-child(1) -> pegamos a primeira tag filha que é um span
+            section > :nth-child(odd) -> Pega todos os filhos ímpares
+            section > :nth-child(even) -> Pega todos os filhos pares
+            section > span:nth-of-type(2) -> Vai pegar somente os segundo elemento span, será ignorados todas as outreas tags filhas que não forem span
+        */
+        section > span:nth-of-type(2) {
+            color: yellow;
+            background-color: rgb(202, 28, 236);
+        }
     </style>
 </head>
 
@@ -29,7 +51,7 @@
             </ol>
             <div id='aninhado' class='tag'>
                 <div class="tag">
-                    <section class='tag'>
+                    <section class='tag nolabel'>
                         <span class='tag'>1</span>
                         <p class='tag'>2</p>
                         <span class='tag'>3</span>

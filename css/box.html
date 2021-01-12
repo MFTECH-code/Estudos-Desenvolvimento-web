@@ -5,7 +5,49 @@
     <meta charset="UTF-8">
     <title>Box Model</title>
     <style>
-        /* ... */
+        /* 
+            box model é pensar que tudo é uma caixa, essa caixa tem o conteúdo, padding, border e margin
+            conteúdo -> conteúdo da tag
+            padding -> espaçamento dentro da caixa
+            border -> borda
+            margin -> espaçamento entre elementos
+
+            paddign: a; aplica nos 4 lados        
+            padding: a a; (top, down) (left right)
+            padding: a a a; (top) (left, right) (down)
+            padding: a a a a; (top) (left) (down) (right)
+         */
+        body {
+            font-size: 80px;
+            margin: 0;
+        }
+
+        .c1 {
+            background-color: orange;
+        }
+
+        .c2 {
+            background-color: skyblue;
+        }
+
+        .c3 {
+            background-color: tomato;
+        }
+
+        div {
+            float: left; /* Faz todos os elementos ficarem alinhados indo para esquerda */
+            padding-top: 100px;
+            padding: 10px 50px 100px 150px;
+            padding: 100px 50px;
+            padding: 50px;
+
+            /* padding e margin seguem a mesma lógica */
+            margin: 0px 20px;
+
+            border: solid 15px black;
+        }
+
+
     </style>
 </head>
 
